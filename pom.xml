@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <cucumber.version>7.14.0</cucumber.version>
-        <spring.version>6.1.1</spring.version>
+        <spring.version>6.2.12</spring.version>
         <selenium.version>4.15.0</selenium.version>
     </properties>
 
@@ -29,13 +29,11 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- SPRING -->
@@ -48,7 +46,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- SELENIUM & WEBDRIVERMANAGER -->

@@ -1,7 +1,7 @@
 package org.testing.hooks;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testing.factory.WebDriverFactory;
 
