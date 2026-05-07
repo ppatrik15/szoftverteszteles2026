@@ -31,6 +31,6 @@ public class CommunitiesStep {
 
     @Then("community cards related to the search should be displayed")
     public void communityCardsRelatedToTheSearchShouldBeDisplayed() {
-        Assert.assertTrue("asd",  communitiesPage.areCommunityCardsDisplayed());
+        Assert.assertTrue("There are no visible community cards",  communitiesPage.areCommunityCardsDisplayed());
     }
 }
