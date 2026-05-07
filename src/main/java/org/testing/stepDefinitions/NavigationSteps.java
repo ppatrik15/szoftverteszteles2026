@@ -1,9 +1,11 @@
 package org.testing.stepDefinitions;
 
 import io.cucumber.java.en.*;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testing.factory.WebDriverFactory;
+import org.testing.pageObjects.CommonPage;
 import org.testing.pageObjects.HomePage;
 import org.testing.pageObjects.CommunityPage;
 
@@ -17,6 +19,14 @@ public class NavigationSteps {
     private WebDriver driver;
     private HomePage homePage;
     private CommunityPage communityPage;
+    private CommonPage commonPage;
+
+    @When("the user navigates to the {string} page")
+    public void theUserNavigatesToThePage(String pageName) {
+        driver = driverFactory.getWebDriver();
+        commonPage = new CommonPage(driver);
+        commonPage.navigateTo(pageName);
+    }
 
     @When("I click the site logo")
     public void iClickLogo() {
