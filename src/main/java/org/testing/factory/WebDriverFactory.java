@@ -20,7 +20,6 @@ public class WebDriverFactory {
     }
 
     private WebDriver setupWebDriver() {
-        WebDriverManager.chromedriver().setup();
         var options = new ChromeOptions()
                 .addArguments("--no-sandbox")
                 .addArguments("--remote-allow-origins")
