@@ -8,8 +8,8 @@ import org.testing.factory.WebDriverFactory;
 @Configuration
 @ComponentScan("org.testing")
 public class TestConfig {
-//    @Bean(destroyMethod = "closeWebDriver")
-//    public WebDriverFactory getWebDriverFactory() {
-//        return new WebDriverFactory();
-//    }
+    @Bean(destroyMethod = "closeWebDriver")
+    public WebDriverFactory getWebDriverFactory() {
+        return new WebDriverFactory();
+    }
 }

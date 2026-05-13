@@ -15,8 +15,4 @@ public class Hooks {
         driverFactory.getWebDriver().manage().deleteAllCookies();
     }
 
-    @After
-    public void tearDown() {
-        driverFactory.closeWebDriver();
-    }
 }

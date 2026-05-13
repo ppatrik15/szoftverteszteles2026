@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-@Component
-@Scope("cucumber-glue")
 public class WebDriverFactory {
     public WebDriver webDriver;
 

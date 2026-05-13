@@ -3,14 +3,16 @@ package org.testing.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.testing.factory.WebDriverFactory;
 
+import java.time.Duration;
 import java.util.List;
 
 @Component
-@Scope("cucumber-glue")
 public class CommunitiesPage extends CommonPage {
 
     private static final String COMMUNITIES_PAGE_URL = "https://wearecommunity.io/communities";
@@ -39,9 +41,14 @@ public class CommunitiesPage extends CommonPage {
     }
 
     public boolean areCommunityCardsDisplayed() {
-        if (communityCards == null || communityCards.isEmpty()) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+            wait.until(ExpectedConditions.visibilityOfAllElements(communityCards));
+
+            return !communityCards.isEmpty() && communityCards.get(0).isDisplayed();
+        } catch (Exception e) {
             return false;
         }
-        return communityCards.get(0).isDisplayed();
     }
 }
